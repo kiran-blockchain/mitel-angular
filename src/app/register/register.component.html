@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-4">
+        <input type="username" class="form-control"
+         [(ngModel)]="register.email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-4">
+        <input type="password" class="form-control" 
+        [(ngModel)]="register.password">
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" 
+          [(ngModel)]="register.confirmPassword">
+        </div>
+      </div>
+    {{register|json}}
+</div>
