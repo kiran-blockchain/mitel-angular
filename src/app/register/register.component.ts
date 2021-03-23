@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { COUNTRY_LIST } from '../constants/lookup';
 
 @Component({
   selector: 'app-register',
@@ -6,14 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent  {
+  countryList;
+  constructor() { 
+    this.countryList = COUNTRY_LIST;
+  }
 
-  constructor() { }
-
-
+ 
   register = {
     email: "kiran",
     password: "kiran",
-    confirmPassword:""
+    confirmPassword:"",
+    gender:"",
+    country:"",
+    agreeTerms:false
   }
 
 }
