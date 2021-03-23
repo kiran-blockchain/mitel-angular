@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header';
 import { ProductsComponent } from './prodcuts/products.component';
 import { CartComponent } from './cart/cart.component';
 import { RegisterComponent } from './register/register.component';
+import { UserModule } from './User/user.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
