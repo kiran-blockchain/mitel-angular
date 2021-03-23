@@ -17,4 +17,7 @@ export class HeaderComponent {
     navItems = ["Home", "Electronics", "Apparel"];
     date = new Date().toString();
     phone="9959687987";
+    selectedCountry ='';
+    //99999-99999
+    //999-999-9999
 }

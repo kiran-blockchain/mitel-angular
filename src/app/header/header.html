@@ -13,14 +13,14 @@
             <a class="nav-link" href="#">{{date|date:'yyyy/dd/MMMM hh:mm:ss'}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{{phone|formatphone}}</a>
+            <a class="nav-link" href="#">{{phone|formatphone:selectedCountry}}</a>
           </li>       
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-       <select class="form-control">
+      <div class="form-inline my-2 my-lg-0">
+       <select class="form-control" [(ngModel)]="selectedCountry">
            <option>Select Country</option>
-         <option *ngFor="let c of countries">{{c.name|uppercase}}</option>
+         <option *ngFor="let c of countries" [value]=c.id>{{c.name|uppercase}}</option>
        </select>
-      </form>
+    </div>
     </div>
   </nav>
