@@ -13,6 +13,7 @@ export class HeaderComponent {
         }, { name: "Australia", id: "AU" }, 
         { name: "United States", id: "USA" }]
 
-
-    navItems = ["Home", "Electronics", "Apparel"]
+    
+    navItems = ["Home", "Electronics", "Apparel"];
+    date = new Date().toString();
 }
