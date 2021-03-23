@@ -16,4 +16,5 @@ export class HeaderComponent {
     
     navItems = ["Home", "Electronics", "Apparel"];
     date = new Date().toString();
+    phone="9959687987";
 }

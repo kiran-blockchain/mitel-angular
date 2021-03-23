@@ -9,6 +9,7 @@ import { ProductsComponent } from './prodcuts/products.component';
 import { CartComponent } from './cart/cart.component';
 import { RegisterComponent } from './register/register.component';
 import { UserModule } from './User/user.module';
+import { PhoneFormatPipe } from './phone.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { UserModule } from './User/user.module';
     FooterComponent,
     ProductsComponent,
     CartComponent,
-    RegisterComponent
+    RegisterComponent,
+    PhoneFormatPipe
   ],
   imports: [
     BrowserModule,
