@@ -24,7 +24,7 @@
         <label  class="col-sm-2 col-form-label">Country</label>
         <div class="col-sm-4">
             <select class="form-control" [(ngModel)]="register.country">
-                <option value={{c.id}} *ngFor="let c of countryList">{{c.name}}</option>
+                <option value={{c.alpha2Code}} *ngFor="let c of countryList">{{c.name}}</option>
             </select>
         </div>
       </div>

@@ -13,18 +13,10 @@ import { PhoneFormatPipe } from './phone.pipe';
 import { CartService } from './cart.service';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './User/login/login.component';
-
+import {HttpClientModule} from '@angular/common/http'
+import { DataService } from './data.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ProductsComponent,
-    CartComponent,
-    RegisterComponent,
-    PhoneFormatPipe
-  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -42,9 +34,20 @@ import { LoginComponent } from './User/login/login.component';
       {
         path:"",component:LoginComponent
       }
-    ])
+    ]),
+    HttpClientModule
   ],
-  providers: [CartService],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    ProductsComponent,
+    CartComponent,
+    RegisterComponent,
+    PhoneFormatPipe
+  ],
+  
+  providers: [CartService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

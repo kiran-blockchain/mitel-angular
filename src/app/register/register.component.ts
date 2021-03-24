@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { COUNTRY_LIST } from '../constants/lookup';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-register',
@@ -8,9 +9,16 @@ import { COUNTRY_LIST } from '../constants/lookup';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent  {
-  countryList;
-  constructor() { 
-    this.countryList = COUNTRY_LIST;
+  countryList=[{
+    alpha2Code:"",
+    name:""
+  }];
+  constructor(private dataSvc:DataService) { 
+   // this.countryList = COUNTRY_LIST;
+    this.dataSvc.getCountries().subscribe((result:any)=>{
+      console.log(result);
+      this.countryList = result;
+    })
   }
 
  
