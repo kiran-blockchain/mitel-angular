@@ -1,9 +1,20 @@
-<div class="container mt-4">
+<form #registerForm="ngForm" class="container mt-4">
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Email</label>
       <div class="col-sm-4">
-        <input type="username" class="form-control"
-         [(ngModel)]="register.email">
+        <input type="text" class="form-control"
+         [(ngModel)]="register.email"
+         required
+         minlength="4"
+         name="email"
+         #email = "ngModel"
+         [pattern] ="emailRegex"
+         maxlength="100"
+         >
+         <div *ngIf="email.errors && email.errors.required">Email is required</div>
+         <div *ngIf="email.errors && email.errors.minlength">Min lentgh is 4</div>
+         <div *ngIf="email.errors && email.errors.maxlength">Max lentgh is 10</div>
+         <div *ngIf="email.errors && email.errors.pattern">Invalid Email</div>
       </div>
     </div>
     <div class="form-group row">
@@ -24,7 +35,7 @@
         <label  class="col-sm-2 col-form-label">Country</label>
         <div class="col-sm-4">
             <select class="form-control" [(ngModel)]="register.country">
-                <option value={{c.alpha2Code}} *ngFor="let c of countryList">{{c.name}}</option>
+                <option value={{c.alpha2Code}} *ngFor="let c of countryList">{{c.alpha2Code}}</option>
             </select>
         </div>
       </div>
@@ -47,5 +58,5 @@
         </div>
       </div>
     
-    {{register|json}}
-</div>
+ 
+    </form>
