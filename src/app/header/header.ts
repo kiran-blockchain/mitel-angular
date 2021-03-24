@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CartService } from "../cart.service";
 
 @Component({
     selector: 'app-header',
@@ -20,4 +21,12 @@ export class HeaderComponent {
     selectedCountry ='';
     //99999-99999
     //999-999-9999
+    cartItems:any;
+    constructor(private cartSvc:CartService){
+        this.cartItems = this.cartSvc.cartItems;
+        setInterval(()=>{
+            this.date = new Date().toString(); 
+        },3000)
+    }
+    
 }

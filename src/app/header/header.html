@@ -13,8 +13,14 @@
             <a class="nav-link" href="#">{{date|date:'yyyy/dd/MMMM hh:mm:ss'}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{{phone|formatphone:selectedCountry}}</a>
-          </li>       
+            <a class="nav-link" href="#">{{phone|formatphone:selectedCountry:'x'}}</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{cartItems.length}}</a>
+            <!-- <button type="button" class="btn btn-default" aria-label="Left Align"> -->
+          <!-- <span class="glyphicon glyphicon-shopping-cart"></span>   -->
+          <!-- </button>  -->
+        </li>     
       </ul>
       <div class="form-inline my-2 my-lg-0">
        <select class="form-control" [(ngModel)]="selectedCountry">

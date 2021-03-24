@@ -3,12 +3,13 @@ import { Pipe, PipeTransform } from "@angular/core";
     name:'formatphone'
 })
 export class PhoneFormatPipe implements PipeTransform{
-    transform(input:string,condition:string) {
+    transform(input:string,condition:any,condition2:any) {
        if(input.length==10){
            if(condition=='USA'){
             let firstThree= input.substring(0,3);
             let secondThree= input.substring(3,6);
             let lastFour= input.substring(6,10);
+            
             return firstThree+"-"+secondThree+"-"+lastFour;
            }
            else if(condition=='IN'){

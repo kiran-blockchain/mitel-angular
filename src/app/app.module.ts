@@ -10,6 +10,7 @@ import { CartComponent } from './cart/cart.component';
 import { RegisterComponent } from './register/register.component';
 import { UserModule } from './User/user.module';
 import { PhoneFormatPipe } from './phone.pipe';
+import { CartService } from './cart.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { PhoneFormatPipe } from './phone.pipe';
     FormsModule,
     UserModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

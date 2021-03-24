@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CartService } from "../cart.service";
 
 @Component({
     templateUrl:"./products.component.html",
@@ -42,4 +43,11 @@ export class ProductsComponent {
 
 
 ]
+
+  constructor(private cartSvc:CartService){
+
+  }
+  addItem(item:any){
+      this.cartSvc.addItemToCart(item);
+  }
 }
