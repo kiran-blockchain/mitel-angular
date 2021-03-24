@@ -28,8 +28,8 @@ export class RegisterComponent {
   }
   emailRegex =/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   register = {
-    email: "kiranDDDDDDDDDD",
-    password: "kiran",
+    email: "",
+    password: "",
     confirmPassword: "",
     gender: "",
     country: "",

@@ -3,11 +3,14 @@ import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ProfileComponent } from './profile/profile.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
     declarations:[LoginComponent, ForgotPasswordComponent, ResetPasswordComponent, ProfileComponent],
-    imports:[FormsModule],
+    imports:[FormsModule,
+        BrowserModule,
+        ReactiveFormsModule],
     providers:[],
     exports:[LoginComponent, ForgotPasswordComponent, ResetPasswordComponent, ProfileComponent]
 })
