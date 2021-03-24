@@ -4,7 +4,7 @@
     <div class="col-sm-4">
       <input type="text" class="form-control" [(ngModel)]="register.email" required minlength="4" name="email"
         #email="ngModel" [pattern]="emailRegex" maxlength="100">
-      <div *ngIf="email.dirty">
+      <div appChangecolor *ngIf="email.dirty">
         <div *ngIf="email.errors && email.errors.required">Email is required</div>
         <div *ngIf="email.errors && email.errors.minlength">Min lentgh is 4</div>
         <div *ngIf="email.errors && email.errors.maxlength">Max lentgh is 10</div>

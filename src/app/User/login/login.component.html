@@ -6,8 +6,8 @@
         formControlName="email"
          >
       </div>
-      <div *ngIf="f.email.touched">
-        <div *ngIf="f.email && f.email.errors && f.email.errors.required">Email is required</div>
+      <div appChangecolor *ngIf="f.email.touched">
+        <div  *ngIf="f.email && f.email.errors && f.email.errors.required">Email is required</div>
         <div *ngIf="f.email && f.email.errors && f.email.errors.minlength">Email minimum length is 10</div>
         <div *ngIf="f.email && f.email.errors && f.email.errors.pattern">Email is invalid</div>
       </div>
