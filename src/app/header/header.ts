@@ -24,9 +24,6 @@ export class HeaderComponent {
     cartItems:any;
     constructor(private cartSvc:CartService){
         this.cartItems = this.cartSvc.cartItems;
-        setInterval(()=>{
-            this.date = new Date().toString(); 
-        },3000)
     }
     
 }

@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { UserModule } from './User/user.module';
 import { PhoneFormatPipe } from './phone.pipe';
 import { CartService } from './cart.service';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './User/login/login.component';
 
 
 @NgModule({
@@ -26,7 +28,21 @@ import { CartService } from './cart.service';
   imports: [
     BrowserModule,
     FormsModule,
-    UserModule
+    UserModule,
+    RouterModule.forRoot([
+      {
+        path:"login",component:LoginComponent
+      },
+      {
+        path:"register",component:RegisterComponent
+      },
+      {
+        path:"products",component:ProductsComponent
+      },
+      {
+        path:"",component:LoginComponent
+      }
+    ])
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
