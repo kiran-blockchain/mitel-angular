@@ -8,6 +8,7 @@
       
       <button class="btn btn-warning"(click)="addItem(p)">Add</button>
      <app-rating [starRating]="p.rating"></app-rating>
+     <app-feedback (userrating)="handleUserRating($event,p)"></app-feedback>
     </div>
   </div>
 </div>

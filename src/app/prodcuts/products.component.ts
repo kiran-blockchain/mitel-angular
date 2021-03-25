@@ -56,4 +56,14 @@ export class ProductsComponent {
   addItem(item:any){
       this.cartSvc.addItemToCart(item);
   }
+  handleUserRating(data:any,p:any){
+      console.log(data);
+      this.products.forEach(item=>{
+          if(item.id==p.id){
+              item.rating = parseInt(data);
+          }
+      });
+      console.log(this.products);
+      
+  }
 }

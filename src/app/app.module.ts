@@ -16,6 +16,7 @@ import { LoginComponent } from './User/login/login.component';
 import {HttpClientModule} from '@angular/common/http'
 import { DataService } from './data.service';
 import { RatingComponent } from './rating/rating.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   imports: [
@@ -48,6 +49,7 @@ import { RatingComponent } from './rating/rating.component';
     RegisterComponent,
     PhoneFormatPipe,
     RatingComponent,
+    FeedbackComponent,
     //ChangecolorDirective
   ],
   
