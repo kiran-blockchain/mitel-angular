@@ -1,59 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer';
-import { HeaderComponent } from './header/header';
-import { ProductsComponent } from './prodcuts/products.component';
-import { CartComponent } from './cart/cart.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { FiltersComponent } from './filters/filters.component';
+import { ProductsComponent } from './products/products.component';
+import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { UserModule } from './User/user.module';
-import { PhoneFormatPipe } from './phone.pipe';
-import { CartService } from './cart.service';
-import { RouterModule } from '@angular/router';
-import { LoginComponent } from './User/login/login.component';
-import {HttpClientModule} from '@angular/common/http'
-import { DataService } from './data.service';
-import { RatingComponent } from './rating/rating.component';
-import { FeedbackComponent } from './feedback/feedback.component';
+import { CustomCommonModule } from './common/common.module';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    UserModule,
-    RouterModule.forRoot([
-      {
-        path:"login",component:LoginComponent
-      },
-      {
-        path:"register",component:RegisterComponent
-      },
-      {
-        path:"products",component:ProductsComponent
-      },
-      {
-        path:"",component:LoginComponent
-      }
-    ]),
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
     HeaderComponent,
     FooterComponent,
+    FiltersComponent,
     ProductsComponent,
-    CartComponent,
-    RegisterComponent,
-    PhoneFormatPipe,
-    RatingComponent,
-    FeedbackComponent,
-    //ChangecolorDirective
+    LoginComponent,
+    RegisterComponent
   ],
-  
-  providers: [CartService,DataService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CustomCommonModule
+  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
