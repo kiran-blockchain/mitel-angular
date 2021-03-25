@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './User/login/login.component';
 import {HttpClientModule} from '@angular/common/http'
 import { DataService } from './data.service';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { DataService } from './data.service';
     CartComponent,
     RegisterComponent,
     PhoneFormatPipe,
+    RatingComponent,
     //ChangecolorDirective
   ],
   

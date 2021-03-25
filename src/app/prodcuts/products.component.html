@@ -7,6 +7,7 @@
       <a href="#" class="btn btn-primary">{{p.price | currency:"EUR"}}</a>
       
       <button class="btn btn-warning"(click)="addItem(p)">Add</button>
+     <app-rating [starRating]="p.rating"></app-rating>
     </div>
   </div>
 </div>
