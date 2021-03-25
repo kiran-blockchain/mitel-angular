@@ -15,7 +15,6 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './User/login/login.component';
 import {HttpClientModule} from '@angular/common/http'
 import { DataService } from './data.service';
-import { ChangecolorDirective } from './changecolor.directive';
 
 @NgModule({
   imports: [

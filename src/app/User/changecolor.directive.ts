@@ -7,7 +7,6 @@ export class ChangecolorDirective {
 
   constructor(private ele:ElementRef) {
       this.ele.nativeElement.style="color:red;"
-
    }
 
 }

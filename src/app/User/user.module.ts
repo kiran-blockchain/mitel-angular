@@ -5,13 +5,15 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
-import { ChangecolorDirective } from "../changecolor.directive";
+import { ChangecolorDirective } from "./changecolor.directive";
+import { AlphabetsDirective } from "./alphabets.directive";
 
 @NgModule({
     declarations:[LoginComponent, 
         ForgotPasswordComponent, 
         ResetPasswordComponent, 
         ProfileComponent,
+        AlphabetsDirective,
     ChangecolorDirective],
     imports:[FormsModule,
         BrowserModule,
@@ -19,6 +21,7 @@ import { ChangecolorDirective } from "../changecolor.directive";
     providers:[],
     exports:[LoginComponent,
          ChangecolorDirective,
+         AlphabetsDirective,
         ForgotPasswordComponent, ResetPasswordComponent, ProfileComponent]
 })
 
