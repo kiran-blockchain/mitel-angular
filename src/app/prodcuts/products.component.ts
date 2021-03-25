@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { CartService } from "../cart.service";
 
 @Component({
     templateUrl:"./products.component.html",
     selector:"app-products"
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit{
     products =[{
         name:"Product One",
         id:1,
@@ -51,8 +51,13 @@ export class ProductsComponent {
 ]
 
   constructor(private cartSvc:CartService){
-
+   console.log("I am the product constructor")
   }
+    ngOnInit(): void {
+        console.log("I am the product init");
+    }
+
+ 
   addItem(item:any){
       this.cartSvc.addItemToCart(item);
   }
