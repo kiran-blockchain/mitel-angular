@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../common/data.service';
 import { EXTERNAL_URL } from '../helpers/external.url';
 import { Login } from './login';
@@ -10,20 +11,30 @@ import { Login } from './login';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private dataSvc: DataService) {
+  constructor(private dataSvc: DataService,private router:Router) {
     this.loginObj = new Login();
   }
   loginObj: Login;
 
   ngOnInit(): void {
-    this.login();
+   // this.login();
   }   
+  hasError=false;
+  showSuccess=false;
   login() {
     this.dataSvc.nonAuthPost(EXTERNAL_URL.LOGIN, this.loginObj).subscribe(
-      (result) => {
-        console.log(result);
+      (result:any) => {
+        if(result==null){
+          this.hasError= true;
+        }
+        else{
+          localStorage.setItem("token",result.accesstoken);
+          this.showSuccess= true;
+          this.router.navigateByUrl('dashboard');
+        }
       }, err => {
         console.log(err);
+        this.hasError= true;
       });
   }
 

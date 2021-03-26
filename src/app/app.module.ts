@@ -11,6 +11,8 @@ import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CustomCommonModule } from './common/common.module';
+import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { CustomCommonModule } from './common/common.module';
     FiltersComponent,
     ProductsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CustomCommonModule
+    CustomCommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
