@@ -24,6 +24,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyInterceptor } from './common/myInterceptor';
 import { PublisherService } from './common/pubsub';
+import { AuthGuard } from './common/authGaurd';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { PublisherService } from './common/pubsub';
     BsDatepickerModule.forRoot()
   ],
   providers: [
+    AuthGuard,
     PublisherService,
     { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}],
   bootstrap: [AppComponent]
