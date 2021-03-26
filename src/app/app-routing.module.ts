@@ -1,14 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { LocationsComponent } from './locations/locations.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { RegisterComponent } from './register/register.component';
+import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
-  {path:"dashboard", component:DashboardComponent},
+  {
+    path: "dashboard", component: DashboardComponent,
+    children: [{
+      path: "projects",
+      component: ProjectsComponent,
+      children:[{
+        path:":id",
+        component:ProjectDetailsComponent
+      }]
+    },
+    {
+      path: "reports",
+      component: ReportsComponent
+    },
+    {
+      path: "locations",
+      component: LocationsComponent
+    },
+
+    ]
+  },
   {
     path: "**", component: PageNotFoundComponent
   }];

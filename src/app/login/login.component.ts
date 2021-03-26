@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
           this.hasError= true;
         }
         else{
-          localStorage.setItem("token",result.accesstoken);
+          localStorage.setItem("token",result.accessToken);
           this.showSuccess= true;
           this.router.navigateByUrl('dashboard');
         }

@@ -10,7 +10,9 @@ export class DataService{
         return this.http.post(url,data);
     }
     authPost(url:string,data:any){
+        let token = localStorage.getItem("token");
         let headers= new HttpHeaders();
+        headers.append("authorization",token||'');
         return this.http.post(url,data,{headers:headers});
     }
     nonAuthGet(url:string){
