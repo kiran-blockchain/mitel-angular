@@ -11,13 +11,15 @@ import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CustomCommonModule } from './common/common.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { LocationsComponent } from './locations/locations.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MyInterceptor } from './common/myInterceptor';
 
 @NgModule({
   declarations: [
@@ -40,9 +42,10 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     BrowserModule,
     AppRoutingModule,
     CustomCommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
