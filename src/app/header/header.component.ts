@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublisherService } from '../common/pubsub';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private publisherSvc:PublisherService) { }
 
   ngOnInit(): void {
+  }
+  searchData='';
+  search(){
+    this.publisherSvc.searchProject(this.searchData);
   }
 
 }

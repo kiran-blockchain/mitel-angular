@@ -20,6 +20,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyInterceptor } from './common/myInterceptor';
+import { PublisherService } from './common/pubsub';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { MyInterceptor } from './common/myInterceptor';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}],
+  providers: [
+    PublisherService,
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,7 @@
     </button> -->
   
     <div class="collapse navbar-collapse" id="navbarColor01">
+      
       <!-- <ul class="navbar-nav mr-right">
        
         <!-- <li class="nv-item">
@@ -18,6 +19,14 @@
           <a class="nav-link" href="#">Register</a>
         </li> 
       </ul> -->
-      
+      <div class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search"
+         [(ngModel)]="searchData"
+         (keyup)="search()"
+         >
+        <button class="btn btn-secondary my-2 my-sm-0" type="button"
+         (click)="search()">Search</button>
+      </div>
     </div>
+   
   </nav>
